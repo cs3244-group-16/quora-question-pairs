@@ -260,3 +260,5 @@ $RECYCLE.BIN/
 
 # data files
 data/raw/*
+models/
+

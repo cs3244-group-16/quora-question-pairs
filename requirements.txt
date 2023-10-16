@@ -2,6 +2,6 @@ jupyter
 pandas
 matplotlib
 torch
-torchvision
-torchaudio
-
+fasttext-wheel
+nltk
+tqdm
