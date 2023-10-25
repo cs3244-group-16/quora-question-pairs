@@ -6,4 +6,4 @@ fasttext-wheel
 nltk
 tqdm
 scikit-learn
-
+transformers

@@ -69,10 +69,10 @@ X_train_full, X_test, y_train_full, y_test = train_test_split(X, y, test_size=0.
 X_train, X_val, y_train, y_val = train_test_split(X_train_full, y_train_full, test_size=0.2, random_state=42)
 
 
-train_dataset = QuoraDataset(X_train[:256], y_train[:256], tokenizer, MAX_LEN)
+train_dataset = QuoraDataset(X_train, y_train, tokenizer, MAX_LEN)
 train_loader = DataLoader(train_dataset, batch_size=BATCH_SIZE, shuffle=True)
 
-val_dataset = QuoraDataset(X_val[:256], y_val[:256], tokenizer, MAX_LEN)
+val_dataset = QuoraDataset(X_val, y_val, tokenizer, MAX_LEN)
 val_loader = DataLoader(val_dataset, batch_size=BATCH_SIZE, shuffle=True)
 
 test_dataset = QuoraDataset(X_val, y_val, tokenizer, MAX_LEN)
@@ -159,6 +159,7 @@ criterion = torch.nn.BCELoss()
 optimizer = torch.optim.Adam(params=model.parameters(), lr=5e-5)
 model = train(model, criterion, optimizer, num_epochs=2)
 
+evaluate(model)
 evaluate(model)
 
 output_model_file = '../models/pytorch_distilbert.bin'
