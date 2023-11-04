@@ -7,3 +7,5 @@ nltk
 tqdm
 scikit-learn
 transformers
+sentencepiece
+
