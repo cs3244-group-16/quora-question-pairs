@@ -259,6 +259,5 @@ $RECYCLE.BIN/
 *.lnk
 
 # data files
-data/raw/*
 models/
-
+data/
